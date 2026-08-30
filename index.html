@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apinya Yawai — Software Engineer</title>
+<meta name="description" content="Portfolio of Apinya Yawai, a Digital and Communication Engineering student building toward software engineering." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="wordmark">Apinya Yawai</span>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Turning signals into software.</h1>
+        <p class="hero-sub">
+          I'm a final-year Digital and Communication Engineering student who has spent the last few years
+          reading data off sensors and cameras — and I'm now channeling that into building applications.
+          Currently looking for a Software Engineer internship.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See my projects</a>
+          <a class="btn btn-ghost" href="Apinya_Yawai_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg id="wave-svg" viewBox="0 0 460 300" fill="none">
+          <!-- dot grid, evokes a sensor/PCB field -->
+          <g class="dot-grid"></g>
+          <path id="wave-path" d="M 10 150 L 60 150 L 80 90 L 100 210 L 120 60 L 140 240 L 160 150 L 210 150 L 230 110 L 250 190 L 270 150 L 450 150" />
+          <circle id="wave-dot" r="5" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about">
+      <div class="section-heading">
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-copy">
+          My background is in embedded systems and applied AI. My senior project, GestureTalk, is a
+          real-time Thai hand-sign recognizer that tracks hand landmarks with MediaPipe and classifies
+          them with a neural network running entirely in the browser — no server involved. Projects like
+          that taught me how to move data reliably from a sensor, through processing logic, to something
+          a person can actually use. That same instinct — build the pipeline, handle the state, make the
+          interface make sense — is what I'm now applying to web development.
+        </p>
+        <dl class="facts">
+          <div>
+            <dt>Education</dt>
+            <dd>B.Eng. Digital and Communication Engineering,<br />Mae Fah Luang University — GPAX 3.09</dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>Bueng Kan, Thailand</dd>
+          </div>
+          <div>
+            <dt>Currently</dt>
+            <dd>Final-year student, learning React,<br />open to Software Engineer internships</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <p>JavaScript, Python, C, C++, C#, Java, MATLAB</p>
+        </div>
+        <div class="skill-group">
+          <h3>Frameworks &amp; tools</h3>
+          <p>React, OpenCV, MediaPipe, Unity, Git, Figma</p>
+        </div>
+        <div class="skill-group">
+          <h3>Currently learning</h3>
+          <p>Node.js, backend fundamentals</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work" class="work">
+      <div class="section-heading">
+        <h2>Selected projects</h2>
+      </div>
+
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 200 160" class="icon-illustration">
+            <!-- simplified hand landmark graph, referencing MediaPipe hand tracking -->
+            <circle cx="100" cy="30" r="5" class="ill-accent-fill" />
+            <circle cx="70" cy="50" r="5" class="ill-accent-fill" />
+            <circle cx="130" cy="50" r="5" class="ill-accent-fill" />
+            <circle cx="55" cy="80" r="5" class="ill-accent2-fill" />
+            <circle cx="145" cy="80" r="5" class="ill-accent2-fill" />
+            <circle cx="100" cy="95" r="6" class="ill-surface-stroke" />
+            <circle cx="80" cy="130" r="5" class="ill-accent2-fill" />
+            <circle cx="120" cy="130" r="5" class="ill-accent2-fill" />
+            <line x1="100" y1="30" x2="100" y2="95" class="ill-line" />
+            <line x1="70" y1="50" x2="100" y2="95" class="ill-line" />
+            <line x1="130" y1="50" x2="100" y2="95" class="ill-line" />
+            <line x1="55" y1="80" x2="100" y2="95" class="ill-line" />
+            <line x1="145" y1="80" x2="100" y2="95" class="ill-line" />
+            <line x1="80" y1="130" x2="100" y2="95" class="ill-line-soft" />
+            <line x1="120" y1="130" x2="100" y2="95" class="ill-line-soft" />
+          </svg>
+        </div>
+        <div class="project-copy">
+          <h3>GestureTalk</h3>
+          <p>
+            Senior project: real-time Thai hand-sign recognition that runs entirely in the browser.
+            MediaPipe tracks 21 hand landmarks per frame; a small neural network — trained separately
+            and exported to JSON — classifies the shape into a letter. No server, no install.
+          </p>
+          <p class="project-stack">JavaScript · MediaPipe Tasks Vision · Neural network · Python (KNN prototype)</p>
+          <div class="project-links">
+            <a href="https://github.com/Apinyayaying/-gesturetalk">View code</a>
+            <a href="https://apinyayaying.github.io/-gesturetalk/">Live demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-reverse">
+        <div class="project-visual">
+          <svg viewBox="0 0 200 160" class="icon-illustration">
+            <rect x="20" y="20" width="160" height="120" rx="4" class="ill-surface" />
+            <line x1="40" y1="48" x2="160" y2="48" class="ill-line" />
+            <rect x="40" y="70" width="12" height="12" rx="2" class="ill-accent" />
+            <line x1="62" y1="76" x2="150" y2="76" class="ill-line-soft" />
+            <rect x="40" y="98" width="12" height="12" rx="2" class="ill-accent-2" />
+            <line x1="62" y1="104" x2="130" y2="104" class="ill-line-soft" />
+            <path d="M42 100 L 46 104 L 52 96" class="ill-check" />
+          </svg>
+        </div>
+        <div class="project-copy">
+          <h3>To-Do List</h3>
+          <p>
+            A task manager built with plain HTML, CSS, and JavaScript. Handles due dates, filtering,
+            and an overdue warning, with everything persisted through <code>localStorage</code>.
+          </p>
+          <p class="project-stack">HTML · CSS · JavaScript · localStorage</p>
+          <div class="project-links">
+            <a href="https://github.com/Apinyayaying/-todo-list-app">View code</a>
+            <a href="https://apinyayaying.github.io/-todo-list-app/">Live demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 200 160" class="icon-illustration">
+            <rect x="20" y="20" width="160" height="120" rx="4" class="ill-surface" />
+            <line x1="40" y1="120" x2="40" y2="70" class="ill-bar" />
+            <line x1="65" y1="120" x2="65" y2="50" class="ill-bar-accent" />
+            <line x1="90" y1="120" x2="90" y2="90" class="ill-bar" />
+            <line x1="115" y1="120" x2="115" y2="65" class="ill-bar-accent2" />
+            <line x1="140" y1="120" x2="140" y2="100" class="ill-bar" />
+            <line x1="40" y1="120" x2="160" y2="120" class="ill-line" />
+          </svg>
+        </div>
+        <div class="project-copy">
+          <h3>Expense Tracker</h3>
+          <p>
+            Tracks income and spending in real time, with a category breakdown rendered as a
+            CSS-only bar chart — no charting library involved.
+          </p>
+          <p class="project-stack">HTML · CSS · JavaScript · Array.reduce()</p>
+          <div class="project-links">
+            <a href="https://github.com/Apinyayaying/expense-tracker">View code</a>
+            <a href="https://apinyayaying.github.io/expense-tracker/">Live demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-reverse">
+        <div class="project-visual">
+          <svg viewBox="0 0 200 160" class="icon-illustration">
+            <circle cx="100" cy="45" r="14" class="ill-accent-fill" />
+            <circle cx="55" cy="115" r="14" class="ill-accent2-fill" />
+            <circle cx="145" cy="115" r="14" class="ill-surface-stroke" />
+            <line x1="100" y1="59" x2="55" y2="101" class="ill-line" />
+            <line x1="100" y1="59" x2="145" y2="101" class="ill-line" />
+          </svg>
+        </div>
+        <div class="project-copy">
+          <h3>To-Do List — React</h3>
+          <p>
+            The same to-do app, rebuilt in React and split into five components. State lives in
+            <code>App.jsx</code> and flows down through props, with <code>useEffect</code> handling
+            persistence.
+          </p>
+          <p class="project-stack">React · Vite · Hooks</p>
+          <div class="project-links">
+            <a href="https://github.com/Apinyayaying/todo-list-react">View code</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <div class="section-heading">
+        <h2>Get in touch</h2>
+      </div>
+      <p class="contact-copy">
+        I'm actively looking for a Software Engineer internship and always glad to talk about a
+        project, a role, or just engineering in general.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:apinya.yaying@gmail.com">apinya.yaying@gmail.com</a>
+        <a href="https://github.com/Apinyayaying">github.com/Apinyayaying</a>
+        <a href="Apinya_Yawai_CV.pdf" download>Download CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built by Apinya Yawai with plain HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
