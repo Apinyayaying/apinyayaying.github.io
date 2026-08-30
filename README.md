@@ -3,7 +3,7 @@
 Personal portfolio site, built with plain HTML, CSS, and JavaScript. One page covering a short intro,
 background, three featured projects, and contact details, plus a downloadable CV.
 
-🔗 **Live demo:** https://apinyayaying.github.io/portfolio/
+🔗 **Live demo:** https://apinyayaying.github.io/
 *(update this if you deploy it under a different repo name — see notes below)*
 
 ## Features
