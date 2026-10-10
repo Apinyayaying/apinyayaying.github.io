@@ -238,11 +238,17 @@
           <ul class="project-tags"><li>Web</li><li>AI / CV</li><li>Senior project</li></ul>
           <h3>GestureTalk</h3>
           <p>
-            Real-time Thai hand-sign recognition that runs entirely in the browser.
-            MediaPipe tracks 21 hand landmarks per frame; a small neural network — trained separately
-            and exported to JSON — classifies the shape into a letter. No server, no install.
+            Real-time Thai Sign Language recognition from an ordinary camera — no extra hardware.
+            MediaPipe tracks 21 hand landmarks per frame and a neural network (MLP, trained on
+            ~1.5 million images, 15 characters) turns each sign into Thai text. The system reached
+            <strong>98% character accuracy</strong> in testing with 5 users.
+            <br /><br />
+            <strong>My role (team of 3): model training, app and UI.</strong> I trained the MLP classifier
+            and built the hybrid web app — live camera view, hand-skeleton overlay, top-3 predictions
+            with confidence — moving it from a desktop prototype to a browser-based app, then
+            redesigned the interface after user testing.
           </p>
-          <p class="project-stack">JavaScript · MediaPipe Tasks Vision · Neural network · Python (KNN prototype)</p>
+          <p class="project-stack">JavaScript · Python · MediaPipe · MLP · OpenCV · Pillow · Hybrid web app</p>
           <div class="project-links">
             <a href="https://github.com/Apinyayaying/-gesturetalk">View code</a>
             <a href="https://apinyayaying.github.io/-gesturetalk/">Live demo</a>
