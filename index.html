@@ -42,6 +42,69 @@
     background: color-mix(in srgb, currentColor 10%, transparent);
   }
   .project-tags { padding: 0; }
+
+  /* Portrait screenshot (phone mock-up): show whole, don't crop */
+  .project-shot--portrait {
+    aspect-ratio: auto; width: auto; max-width: 100%;
+    max-height: 460px; margin: 0 auto; object-fit: contain;
+    border: none; border-radius: 0;
+  }
+
+  /* ---- About: profile photo ---- */
+  .about-side { display: flex; flex-direction: column; gap: 24px; }
+  .about-photo {
+    display: block; width: 100%; max-width: 280px; height: auto;
+    aspect-ratio: 3 / 4; object-fit: cover; object-position: center 30%;
+    border-radius: 12px;
+  }
+
+  /* ---- Certifications ---- */
+  .cert-grid, .activity-grid {
+    display: grid; gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .cert-card {
+    display: flex; flex-direction: column; gap: 10px; text-align: left;
+    font: inherit; color: inherit; background: transparent; cursor: zoom-in;
+    padding: 0; border: none;
+  }
+  .cert-card img {
+    display: block; width: 100%; height: auto; aspect-ratio: 1.414 / 1; object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+    transition: transform .2s ease;
+  }
+  .cert-card:hover img, .cert-card:focus-visible img { transform: translateY(-3px); }
+  .cert-card strong { font-size: 1rem; }
+  .cert-card span { font-size: 0.85rem; opacity: 0.75; }
+
+  /* ---- Activities ---- */
+  .activity-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .activity { margin: 0; }
+  .activity img {
+    display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
+    border-radius: 8px;
+  }
+  .activity figcaption { margin-top: 12px; font-size: 0.95rem; }
+  .activity figcaption strong { display: block; margin-bottom: 2px; }
+  .activity figcaption span { opacity: 0.75; }
+
+  .certs, .activities { margin-top: 96px; }
+
+  /* ---- Lightbox ---- */
+  .lightbox { border: none; padding: 0; background: transparent; max-width: min(1100px, 94vw); }
+  .lightbox::backdrop { background: rgba(0, 0, 0, 0.8); }
+  .lightbox img { display: block; max-width: 100%; max-height: 88vh; height: auto; border-radius: 6px; }
+  .lightbox button {
+    position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border-radius: 50%;
+    border: none; cursor: pointer; font-size: 20px; line-height: 1;
+    background: rgba(0, 0, 0, 0.6); color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .about-photo { max-width: 220px; }
+    .certs, .activities { margin-top: 64px; }
+  }
 </style>
 </head>
 <body>
@@ -50,6 +113,7 @@
     <span class="wordmark">Apinya Yawai</span>
     <nav>
       <a href="#work">Work</a>
+      <a href="#certifications">Certifications</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -94,6 +158,8 @@
           a person can actually use. That same instinct — build the pipeline, handle the state, make the
           interface make sense — is what I'm now applying to web development.
         </p>
+        <div class="about-side">
+        <img class="about-photo" src="images/profile.jpg" alt="Portrait of Apinya Yawai" width="280" height="373" />
         <dl class="facts">
           <div>
             <dt>Education</dt>
@@ -108,6 +174,7 @@
             <dd>Co-op internship, January–April 2027</dd>
           </div>
         </dl>
+        </div>
       </div>
 
       <div class="skills">
@@ -143,8 +210,8 @@
 
       <article class="project" data-tags="web ai">
         <div class="project-visual">
-          <img class="project-shot" src="images/gesturetalk.png"
-               alt="GestureTalk recognizing a Thai hand sign from the webcam, with hand landmarks drawn over the hand"
+          <img class="project-shot project-shot--portrait" src="images/gesturetalk.jpg"
+               alt="GestureTalk on a phone: hand landmarks tracked over a raised hand, predicted letter G at 100% confidence"
                loading="lazy" onerror="this.remove()" />
           <svg viewBox="0 0 200 160" class="icon-illustration">
             <!-- simplified hand landmark graph, referencing MediaPipe hand tracking -->
@@ -245,6 +312,58 @@
       </article>
     </section>
 
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" class="certs">
+      <div class="section-heading">
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-grid">
+        <button type="button" class="cert-card" data-full="images/cert-hcia-iot.jpg">
+          <img src="images/cert-hcia-iot.jpg" alt="Huawei HCIA-IoT certificate" loading="lazy" />
+          <strong>HCIA-IoT</strong>
+          <span>Huawei Certification · valid through Dec 2028</span>
+        </button>
+        <button type="button" class="cert-card" data-full="images/cert-hccda-cloud-native.jpg">
+          <img src="images/cert-hccda-cloud-native.jpg" alt="Huawei Cloud HCCDA-Cloud Native developer certificate" loading="lazy" />
+          <strong>HCCDA-Cloud Native</strong>
+          <span>Huawei Cloud Developer Certification · valid until Sep 2028</span>
+        </button>
+        <button type="button" class="cert-card" data-full="images/cert-startup-thailand-league-2023.jpg">
+          <img src="images/cert-startup-thailand-league-2023.jpg" alt="Startup Thailand League 2023 certificate of participation" loading="lazy" />
+          <strong>Startup Thailand League 2023</strong>
+          <span>NIA × Mae Fah Luang University · Feb 2024</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ ACTIVITIES ============ -->
+    <section id="activities" class="activities">
+      <div class="section-heading">
+        <h2>Activities</h2>
+      </div>
+      <div class="activity-grid">
+        <figure class="activity">
+          <img src="images/activity-startup-thailand-league.jpg" alt="Apinya with her team at Startup Thailand League 2023" loading="lazy" />
+          <figcaption>
+            <strong>Startup Thailand League 2023</strong>
+            <span>Built and pitched a startup idea and business model with a multidisciplinary team.</span>
+          </figcaption>
+        </figure>
+        <figure class="activity">
+          <img src="images/activity-r2m.jpg" alt="Apinya pitching on stage at Research to Market, Mae Fah Luang University" loading="lazy" />
+          <figcaption>
+            <strong>Research to Market (R2M)</strong>
+            <span>Pitched how a research concept could become a real product to a panel of judges.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Certificate">
+      <button type="button" aria-label="Close">×</button>
+      <img src="" alt="" />
+    </dialog>
+
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="contact">
       <div class="section-heading">
@@ -279,6 +398,20 @@
           p.hidden = f !== 'all' && !p.dataset.tags.split(' ').includes(f);
         });
       }));
+    })();
+
+    // Certificate lightbox
+    (function () {
+      const box = document.getElementById('lightbox');
+      if (!box || !box.showModal) return;
+      const img = box.querySelector('img');
+      document.querySelectorAll('.cert-card').forEach(card => card.addEventListener('click', () => {
+        img.src = card.dataset.full;
+        img.alt = card.querySelector('img').alt;
+        box.showModal();
+      }));
+      box.querySelector('button').addEventListener('click', () => box.close());
+      box.addEventListener('click', e => { if (e.target === box) box.close(); });
     })();
   </script>
 </body>
